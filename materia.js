@@ -13,3 +13,4 @@ materia1.presentacion2 =function(){
     let texto ="el profesor " + this.profesor + " es el mejor de "+ this.asignatura;
     return texto;
 }
+

@@ -1,10 +1,142 @@
-var alumno1= new Object;
-alumno1.matricula = 1322134204;
-alumno1.nombre = "Diego  ";
-alumno1.apellidos = "Velazquez";
-alumno1.anio_de_Nacimiento = 2004;
-alumno1.presentacion = function(){
-    let anios = 2023 - this.anio_nacimiento;
-    let texto = "hola mi nombre es " + this.nombre + " " + this.apellidos + "y tengo" + anios + "años";
-    return texto;
-}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Tira de Materias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Sistema de Tira de Materias</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Alumnos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                materias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Grupos</a>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center">Carreras</h4>
+                    </div>
+                    <div class="card-body">
+                    
+                    <div class="form.group">
+                        <label for="name">Nombre</label>
+                        <input class="form-control" type="text" name="name" id="name" value="Ingenieria en software">
+                    </div>
+                <div>
+                    <label for="generation">Generación</label>
+                    <input class="form-control" type="text" name="generation" id="generation" value="20">
+                </div>
+                <button class="btn btn-primary float-right" onclick="guardarCarrera()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Grupo</h3>
+                <div>
+                    <label for="name-group">Nombre</label>
+                    <input class="form-control" type="text" name="name-group" id="name-group"  value="4223IS">
+                </div>
+                <div>
+                    <label for="aula">Aula</label>
+                    <input class="form-control" type="text" name="aula" id="aula" value="30">
+                </div>
+                <div>
+                    <label for="carrera">Carrera</label>
+                    <select class="form-control form-select" name="carrera" id="carrera">
+                    
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="crearGrupo()">Guardar</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Alumnos</h3>
+                <div>
+                    <label for="name">Nombre</label>
+                    <input class="form-control" type="text" name="name-student" id="name-student" value="Sandra">
+                </div>
+                
+                <div>
+                    <label for="lastname">Apellidos</label>
+                    <input class="form-control" type="text" name="lastname" id="lastname" value="Sanchez Lopez">
+                </div>
+                <div>
+                    <label for="date">fecha de nacimiento</label>
+                    <input class="form-control" type="date" name="date" id="date" value="2004/02/18">
+                </div>
+                <div>
+                    <label for="matricula">matricula</label>
+                    <input class="form-control" type="text" name="matricula" id="matricula" value="89234892374">
+                </div>
+                <div>
+                    <label for="nss">NSS</label>
+                    <input class="form-control" type="number" name="nss" id="nss" value="76348234">
+                </div>
+            
+                <button class="btn btn-primary" onclick="guardarAlumno()">Guardar</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Asignar Grupos</h3>
+        <div>
+            <select class="form-control form-select" name="students" id="students">
+                
+            </select>
+        </div>
+        <div>
+            <select class="form-control form-select" name="groups" id="groups">
+
+            </select>
+        </div>
+        <button class="btn btn-primary" onclick="asignarAlumnoaGrupo()">
+            Asignar Grupo
+        </button>
+            </div>
+        </div>
+    
+    
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="Persona.js"></script>
+    <script src="Alumno.js"></script>
+    <script src="Docente.js"></script>
+    <script src="Carrera.js"></script>
+    <script src="Grupo.js"></script>
+    <script src="Asignatura.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

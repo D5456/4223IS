@@ -1,35 +1,27 @@
-class Persona{
-nombre;
-Apellidos;
-Fecha_Nacimiento;
-#Correo;
-/**
- * 
- * @param {string} correo
- */
-Actualizar_correo = function(correo){
-    this.#Correo = Correo;
-}
-/**
- * 
- * @returns {int}
- */
-calcular_edad = function(){
-    let fecha_actual = new Date();
-    let fecha_Nacimiento =new Date(this.Fecha_Nacimiento);
-    let edad = fecha_actual.getFullYear() - fecha_Nacimiento.getFullYear();
-    let mes = fecha_actual.getMonth() - fecha_Nacimiento.getMonth();
-    if(mes < 0 || (mes === 0 && fecha_actual.getDate() < fecha_Nacimiento.getDate())){
-        edad --;
+class Persona {
+    #id;
+    Nombre;
+    Apellidos;
+    F_nacimiento;
+    constructor(nombre, apellidos, fecha){
+        this.Nombre =  nombre;
+        this.Apellidos = apellidos;
+        this.F_nacimiento =  fecha;
+        //this.#id = this.#crearId();
     }
-    return parseInt(edad);
-}
 
+    calcularEdad =  function(){
+        let fecha = new Date();
+        let edad = fecha.getFullYear() - this.F_nacimiento.getFullYear();
+        return edad;
+    }
 
-
-
-
-
-
-
+    /**
+     * 
+     * @returns {Int}
+     */
+    #crearId= function(){
+        let name =  this.Nombre;
+        return  name.charAt(0) + Math.floor(Math.random() * 1000);
+    }
 }
