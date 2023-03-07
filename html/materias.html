@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+     
+
+   
+<title>Materias</title>
+    
+<style>
+      /* Estilos para la lista de
+
+      /* Estilos para la
+
+      /* Estilos para
+
+      /* Estilos
+
+      /* Estilos para la lista de materias */
+      .materia {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      .materia:hover {
+        background-color: lightgray;
+      }
+
+      .seleccionado {
+        background-color: yellow;
+      }
+    </style>
+  
+  <head>
+
+ 
+</head>
+  
+  
+
+ 
+<div>
+    
+    
+
+   
+<h1>Selecciona tus materias</h1>
+    <div id="lista-materias">
+      
+        <form action="">
+            <label>Nombre del producto</label>
+            <select id="productoEditar">
+<!-- La lista de materias se generará aquí -->
+<option value="">---</option>
+<option value="">Administraccion</option>
+<option value="">Sociologiaa de la empresa</option>
+<option value="">Tecnicas de Negociacion</option>
+<option value="">Microeconomia</option>
+<option value="">Macroeconomia</option>
+<option value="">Contabilidad</option>
+    
+
+   
+</div>
+>+</form>
+
+   
+<form action="procesar_formulario.php" method="POST">
+      
+      
+
+     
+<input type="hidden" id="materias-seleccionadas" name="materias-seleccionadas">
+      
+     
+<input type="submit" value="Enviar">
+    
+</form>
+
+   
+<script src="script.js"></script>
+  
+</body>
+
+</html>

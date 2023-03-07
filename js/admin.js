@@ -1,3 +1,4 @@
+
 // Array de materias
 const materias = ["Matemáticas", "Ciencias", "Historia", "Idiomas", "Artes"];
 
@@ -27,4 +28,19 @@ for (let i = 0; i < materias.length; i++) {
     const campoSeleccionado = document.getElementById("materias-seleccionadas");
     campoSeleccionado.value = JSON.stringify(valoresSeleccionados);
   });
+}
+function materia(){
+    alert("se envio correctamente");
+}
+function materia1(){
+    alert("se envio correctamente");
+}
+function materia2(){
+    alert("se envio correctamente");
+}
+function materia3(){
+    alert("se envio correctamente");
+}
+function verificacion(){
+    alert("se verifico correctamente");
 }
